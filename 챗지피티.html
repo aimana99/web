@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>바다와 서퍼</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #0077be 60%, #87ceeb 100%);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sun {
+      position: absolute;
+      top: 50px;
+      right: 80px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ffd700 60%, #ffec8b 100%);
+      border-radius: 50%;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 300px;
+      background: repeating-linear-gradient(
+        -45deg,
+        #1e90ff,
+        #1e90ff 20px,
+        #00bfff 20px,
+        #00bfff 40px
+      );
+      border-top-left-radius: 50% 20%;
+      border-top-right-radius: 50% 20%;
+      animation: waveAnim 4s infinite ease-in-out alternate;
+    }
+
+    @keyframes waveAnim {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+
+    .surfer {
+      position: absolute;
+      bottom: 180px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 20px;
+      background: #ff4500;
+      border-radius: 50px / 20px;
+    }
+
+    .surfer-body {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 40px;
+      background: #000;
+      border-radius: 10px;
+    }
+
+    .surfer-arm {
+      position: absolute;
+      width: 40px;
+      height: 8px;
+      background: #000;
+      top: 10px;
+      left: -10px;
+      transform: rotate(45deg);
+      transform-origin: left center;
+      border-radius: 4px;
+    }
+
+    .surfer-arm.right {
+      left: auto;
+      right: -10px;
+      transform: rotate(-45deg);
+      transform-origin: right center;
+    }
+  </style>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="wave"></div>
+  <div class="surfer"></div>
+  <div class="surfer-body">
+    <div class="surfer-arm"></div>
+    <div class="surfer-arm right"></div>
+  </div>
+</body>
+</html>
